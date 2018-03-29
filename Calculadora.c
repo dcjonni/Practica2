@@ -29,22 +29,18 @@ void main (void){
       switch (interruptor){
          case 0xE0:{
             resultado=datoC + datoD;
-            output_a(resultado);
-            output_b(resultado>>6);
          }break;
          case 0xD0:{
             resultado=datoC - datoD;
-            output_a(resultado);
          }break;
          case 0xB0:{
             resultado=datoC * datoD;
-            output_a(resultado);
-            output_b(resultado>>6);
          }break;
          case 0x70:{
-            resultado=datoC + datoD;
-            output_a(resultado);
+            resultado=datoC / datoD;
          }break;
       }
+      output_a(resultado);
+      output_b(resultado>>6);
    }
 }
